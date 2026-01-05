@@ -1,0 +1,7 @@
+// theme.scss
+// 转发变量文件
+@forward './_variables.scss';
+// 转发混合宏文件（确保 theme-bg 混入在此文件中定义）
+@forward './_mixins.scss';
+// 转发组件样式索引文件
+@forward './components/index.scss';

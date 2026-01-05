@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use 'variables';
+// 主题混合
+@mixin flex-center { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin theme-property($property, $key) {
+  @each $theme-name, $theme-map in variables.$themes {
+    [data-theme="#{$theme-name}"] & {
+      #{$property}: map.get($theme-map, $key);
+    }
+  }
+}
+
+@mixin theme-bg {
+  @include theme-property('background-color', 'bg-color');
+}
+
+@mixin theme-text {
+  @include theme-property('color', 'text-color');
+}
