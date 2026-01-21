@@ -22,3 +22,11 @@
 @mixin theme-text {
   @include theme-property('color', 'text-color');
 }
+
+@mixin theme-border {
+  @include theme-property('border-color', 'border-color');
+}
+
+@mixin theme-box-shadow {
+  @include theme-property('box-shadow', 'box-shadow-color');
+}

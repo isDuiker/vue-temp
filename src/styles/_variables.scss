@@ -10,12 +10,14 @@ $themes: (
   light: (
     bg-color: #ffffff,
     text-color: rgba(0, 0, 0, 0.85),
-    border-color: #d9d9d9
+    border-color: #d9d9d9,
+    box-shadow-color: rgba(0, 0, 0, 0.15)
   ),
   dark: (
     bg-color: #141414,
     text-color: rgba(255, 255, 255, 0.85),
-    border-color: #434343
+    border-color: #434343,
+    box-shadow-color: rgba(255, 255, 255, 0.15)
   )
 );
 
