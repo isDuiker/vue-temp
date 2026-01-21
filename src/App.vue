@@ -1,15 +1,15 @@
 <script setup>
-import { useThemeStore } from "@/stores/index";
-import ThemeDemoCard from "@/components/ThemeDemoCard.vue";
-const themeStore = useThemeStore();
+import { onMounted } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+onMounted(() => {
+  console.log("=========route==========", route);
+});
 </script>
 
 <template>
   <div class="app-container w-screen h-screen">
-    <button class="border p-2 my-1" @click="themeStore.toggleTheme">
-      切换主题
-    </button>
-    <ThemeDemoCard />
+    <router-view />
   </div>
 </template>
 
@@ -18,6 +18,8 @@ const themeStore = useThemeStore();
 .app-container {
   @include theme.theme-bg;
   @include theme.theme-text;
+  @include theme.theme-border;
+  @include theme.theme-box-shadow;
   transition: background-color 0.3s;
 }
 </style>
