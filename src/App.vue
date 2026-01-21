@@ -1,14 +1,25 @@
+<script setup>
+import { onMounted } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+onMounted(() => {
+  console.log("=========route==========", route);
+});
+</script>
+
 <template>
-  <h1>Hello World</h1>
-  <!-- 你可以在组件模板中使用 $route 来访问当前的路由对象。 -->
-  <p><strong>Current route path:</strong>{{ $route.path }}</p>
-  <nav>
-    <RouterLink to="/">Go to Home</RouterLink>
-    <RouterLink to="/about">Go to About</RouterLink>
-  </nav>
-  <main>
-    <RouterView />
-  </main>
+  <div class="app-container w-screen h-screen">
+    <router-view />
+  </div>
 </template>
-<script setup></script>
-<style scoped></style>
+
+<style scoped lang="scss">
+@use "@/styles/theme.scss" as theme;
+.app-container {
+  @include theme.theme-bg;
+  @include theme.theme-text;
+  @include theme.theme-border;
+  @include theme.theme-box-shadow;
+  transition: background-color 0.3s;
+}
+</style>

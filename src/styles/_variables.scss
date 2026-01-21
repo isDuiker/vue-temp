@@ -1,0 +1,23 @@
+// 定义全局变量 文件名以下划线开头。这样，`scss`就不会在编译时单独编译这个文件输出`css`，而只把这个文件用作导入。
+
+// 基础色板
+$color-primary: #1890ff;
+$color-success: #52c41a;
+$color-warning: #faad14;
+
+// 主题映射表
+$themes: (
+  light: (
+    bg-color: #ffffff,
+    text-color: rgba(0, 0, 0, 0.85),
+    border-color: #d9d9d9,
+    box-shadow-color: rgba(0, 0, 0, 0.15)
+  ),
+  dark: (
+    bg-color: #141414,
+    text-color: rgba(255, 255, 255, 0.85),
+    border-color: #434343,
+    box-shadow-color: rgba(255, 255, 255, 0.15)
+  )
+);
+
