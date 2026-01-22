@@ -3,9 +3,6 @@
     <el-menu
       :default-active="route.path"
       class="sidebar-menu"
-      :background-color="variables.menuBg"
-      :text-color="variables.menuText"
-      :active-text-color="variables.menuActiveText"
       :unique-opened="false"
       :collapse-transition="false"
       router
@@ -21,12 +18,6 @@ import { useRoute } from "vue-router";
 import SidebarItem from "./SidebarItem.vue";
 
 const route = useRoute();
-
-const variables = {
-  menuBg: "#304156",
-  menuText: "#bfcbd9",
-  menuActiveText: "#1890ff",
-};
 
 // 菜单数据
 const menuItems = ref([
@@ -78,12 +69,14 @@ const menuItems = ref([
 
 <style scoped lang="scss">
 @use "@/styles/variables.scss" as variables;
+@use "@/styles/mixins.scss" as mixins;
 
 .sidebar {
   width: 180px;
-  background-color: #304156;
+  @include mixins.theme-property("background-color", "menu-bg");
   height: 100%;
   overflow-y: auto;
+  padding: 10px 10px;
 
   // 隐藏原生滚动条但保持滚动功能 (可选)
   &::-webkit-scrollbar {
@@ -93,19 +86,14 @@ const menuItems = ref([
 
 .sidebar-menu {
   border-right: none;
-
-  &:not(.el-menu--collapse) {
-    width: 180px;
-  }
+  @include mixins.theme-property("--el-menu-bg-color", "menu-bg");
+  @include mixins.theme-property("--el-menu-text-color", "menu-text");
+  @include mixins.theme-property("--el-menu-active-color", "menu-active-text");
+  @include mixins.theme-property("--el-menu-hover-bg-color", "menu-active-bg");
 
   // 选中菜单整行高亮
   :deep(.el-menu-item.is-active) {
-    background-color: variables.$color-primary;
-    color: #ffffff;
-
-    span {
-      color: #ffffff;
-    }
+    @include mixins.theme-property("background-color", "menu-active-bg");
   }
 }
 </style>

@@ -21,15 +21,16 @@ const themeStore = useThemeStore();
 <style scoped lang="scss">
 // 引入主题颜色变量
 @use "@/styles/variables" as variables;
+@use "@/styles/mixins" as mixins;
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  height: 40px;
-  // 文字颜色固定为白色主题颜色变量
-  color: #ffffff;
-  background-color: #1890ff;
+  height: 50px;
+  border-bottom: 1px solid;
+  @include mixins.theme-border;
   .logo {
     display: flex;
     align-items: center;
@@ -39,7 +40,8 @@ const themeStore = useThemeStore();
       height: 30px;
     }
     span {
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: bold;
     }
   }
   .user-info {

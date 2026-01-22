@@ -11,13 +11,21 @@ $themes: (
     bg-color: #ffffff,
     text-color: rgba(0, 0, 0, 0.85),
     border-color: #d9d9d9,
-    box-shadow-color: rgba(0, 0, 0, 0.15)
+    box-shadow-color: rgba(0, 0, 0, 0.15),
+    menu-bg: #e4ebfe,
+    menu-text: rgba(0, 0, 0, 0.85),
+    menu-active-text: #1890ff,
+    menu-active-bg: #b6bccb
   ),
   dark: (
     bg-color: #141414,
     text-color: rgba(255, 255, 255, 0.85),
     border-color: #434343,
-    box-shadow-color: rgba(255, 255, 255, 0.15)
+    box-shadow-color: rgba(255, 255, 255, 0.15),
+    menu-bg: #222222,
+    menu-text: rgba(255, 255, 255, 0.85),
+    menu-active-text: #ffffff,
+    menu-active-bg: #1890ff
   )
 );
 
