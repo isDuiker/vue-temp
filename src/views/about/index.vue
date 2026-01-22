@@ -83,36 +83,30 @@ const devDependencies = [
 <style scoped lang="scss">
 @use "@/styles/mixins.scss" as mixins;
 .about-container {
-  padding: 20px;
-}
-
-.header-section {
-  margin-bottom: 30px;
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
-    color: var(--el-text-color-primary);
+  .header-section {
+    margin-bottom: 30px;
+    h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: var(--el-text-color-primary);
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 800px;
+      color: var(--el-text-color-regular);
+    }
   }
-
-  p {
-    font-size: 14px;
-    line-height: 1.6;
-    max-width: 800px;
-    color: var(--el-text-color-regular);
+  .desc-text {
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--el-text-color-secondary);
   }
-}
-
-.desc-text {
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--el-text-color-secondary);
-}
-
-.footer-info {
-  margin-top: 40px;
-  text-align: center;
-  color: var(--el-text-color-secondary);
-  font-size: 12px;
+  .footer-info {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--el-text-color-secondary);
+    font-size: 12px;
+  }
 }
 </style>
