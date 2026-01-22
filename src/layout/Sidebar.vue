@@ -13,43 +13,41 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
+import { STATIC_ROUTES } from "@/router/routes";
 import SidebarItem from "./SidebarItem.vue";
 
 const route = useRoute();
 
-// 菜单数据
-const menuItems = ref([
-  { path: "/", title: "首页" },
-  {
-    title: "系统管理",
-    children: [
-      { path: "/system/user", title: "用户管理" },
-      { path: "/system/role", title: "角色管理" },
-      { path: "/system/menu", title: "菜单管理" },
-    ],
-  },
-  // 功能组件
-  {
-    title: "功能组件",
-    children: [
-      { path: "/feature/table", title: "综合表格" },
-      { path: "/feature/form", title: "复杂表单" },
-    ],
-  },
-  {
-    title: "关于",
-    children: [
-      { path: "/about", title: "关于项目" },
-      { path: "/login", title: "登录页面" },
-    ],
-  },
-  {
-    title: "测试页面",
-    path: "/test",
-  },
-]);
+// 从路由生成菜单数据
+const menuItems = computed(() => {
+  const layoutRoute = STATIC_ROUTES.find((r) => r.name === "layout");
+  if (!layoutRoute || !layoutRoute.children) return [];
+  return generateMenu(layoutRoute.children);
+});
+
+function generateMenu(routes) {
+  const menu = [];
+  routes.forEach((route) => {
+    if (route.meta?.hidden) return;
+
+    const item = {
+      path: route.path,
+      title: route.meta?.title || route.name || "未命名",
+    };
+
+    if (route.children && route.children.length > 0) {
+      const children = generateMenu(route.children);
+      if (children.length > 0) {
+        item.children = children;
+      }
+    }
+
+    menu.push(item);
+  });
+  return menu;
+}
 </script>
 
 <style scoped lang="scss">
