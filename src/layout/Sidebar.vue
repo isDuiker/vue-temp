@@ -73,7 +73,13 @@ function generateMenu(routes) {
   @include mixins.theme-property("--el-menu-text-color", "menu-text");
   @include mixins.theme-property("--el-menu-active-color", "menu-active-text");
   @include mixins.theme-property("--el-menu-hover-bg-color", "menu-active-bg");
-
+  :deep(.el-menu-item) {
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  :deep(.el-sub-menu__title) {
+    border-radius: 4px;
+  }
   // 选中菜单整行高亮
   :deep(.el-menu-item.is-active) {
     @include mixins.theme-property("background-color", "menu-active-bg");
