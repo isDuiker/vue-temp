@@ -31,30 +31,48 @@ export const STATIC_ROUTES = [
       },
       // 系统管理
       {
-        path: "/user",
-        name: "user",
-        component: () => import("@/views/system/user/index.vue"),
-      },
-      {
-        path: "/role",
-        name: "role",
-        component: () => import("@/views/system/role/index.vue"),
-      },
-      {
-        path: "/menu",
-        name: "menu",
-        component: () => import("@/views/system/menu/index.vue"),
+        path: "/system",
+        name: "system",
+        children: [
+          {
+            path: "/system/user",
+            name: "user",
+            component: () => import("@/views/system/user/index.vue"),
+          },
+          {
+            path: "/system/role",
+            name: "role",
+            component: () => import("@/views/system/role/index.vue"),
+          },
+          {
+            path: "/system/menu",
+            name: "menu",
+            component: () => import("@/views/system/menu/index.vue"),
+          },
+        ],
       },
       // 功能组件
+
       {
-        path: "/table",
-        name: "table",
-        component: () => import("@/views/feature/table/index.vue"),
+        path: "/feature",
+        name: "feature",
+        children: [
+          {
+            path: "/feature/table",
+            name: "table",
+            component: () => import("@/views/feature/table/index.vue"),
+          },
+          {
+            path: "/feature/form",
+            name: "form",
+            component: () => import("@/views/feature/form/index.vue"),
+          },
+        ],
       },
       {
-        path: "/form",
-        name: "form",
-        component: () => import("@/views/feature/form/index.vue"),
+        path: "/test",
+        name: "test",
+        component: () => import("@/views/test.vue"),
       },
     ],
   },

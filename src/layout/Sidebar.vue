@@ -25,16 +25,17 @@ const menuItems = ref([
   {
     title: "系统管理",
     children: [
-      { path: "/user", title: "用户管理" },
-      { path: "/role", title: "角色管理" },
-      { path: "/menu", title: "菜单管理" },
+      { path: "/system/user", title: "用户管理" },
+      { path: "/system/role", title: "角色管理" },
+      { path: "/system/menu", title: "菜单管理" },
     ],
   },
+  // 功能组件
   {
     title: "功能组件",
     children: [
-      { path: "/table", title: "综合表格" },
-      { path: "/form", title: "复杂表单" },
+      { path: "/feature/table", title: "综合表格" },
+      { path: "/feature/form", title: "复杂表单" },
     ],
   },
   {
@@ -43,6 +44,10 @@ const menuItems = ref([
       { path: "/about", title: "关于项目" },
       { path: "/login", title: "登录页面" },
     ],
+  },
+  {
+    title: "测试页面",
+    path: "/test",
   },
 ]);
 </script>
