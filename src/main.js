@@ -4,6 +4,7 @@ import { createPinia } from "pinia";
 import website from "@/config/website";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import "./style.css";
+import "element-plus/theme-chalk/dark/css-vars.css";
 import App from "./App.vue";
 
 const pinia = createPinia();

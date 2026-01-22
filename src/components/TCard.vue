@@ -5,7 +5,6 @@
 </template>
 <style scoped lang="scss">
 // 引入主题颜色变量
-@use "@/styles/variables" as variables;
 @use "@/styles/mixins" as mixins;
 
 .card {
