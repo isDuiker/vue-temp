@@ -7,10 +7,20 @@ export const useThemeStore = defineStore("theme", {
   actions: {
     initTheme() {
       document.documentElement.setAttribute("data-theme", this.currentTheme);
+      if (this.currentTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     },
     toggleTheme() {
       this.currentTheme = this.currentTheme === "light" ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", this.currentTheme);
+      if (this.currentTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     },
   },
 });
