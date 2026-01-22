@@ -23,46 +23,26 @@ const route = useRoute();
 const menuItems = ref([
   { path: "/", title: "首页" },
   {
+    title: "系统管理",
+    children: [
+      { path: "/user", title: "用户管理" },
+      { path: "/role", title: "角色管理" },
+      { path: "/menu", title: "菜单管理" },
+    ],
+  },
+  {
+    title: "功能组件",
+    children: [
+      { path: "/table", title: "综合表格" },
+      { path: "/form", title: "复杂表单" },
+    ],
+  },
+  {
     title: "关于",
     children: [
-      { path: "/about", title: "我们" },
-      { path: "/login", title: "登录" },
+      { path: "/about", title: "关于项目" },
+      { path: "/login", title: "登录页面" },
     ],
-  },
-  {
-    path: "/process-monitor",
-    title: "过程监控",
-    children: [
-      { path: "/air-quality", title: "空气质量监测" },
-      { path: "/pest-monitor", title: "虫情监测" },
-      { path: "/nitrogen", title: "充氮监测" },
-      { path: "/power", title: "动力工况监测" },
-    ],
-  },
-  { path: "/pest-calibration", title: "虫情校准" },
-  {
-    path: "/pest-management",
-    title: "虫情管理",
-    children: [
-      { path: "/monthly-summary", title: "月度虫情汇总" },
-      { path: "/yearly-summary", title: "年度虫情汇总" },
-    ],
-  },
-  { path: "/warning", title: "预警报警" },
-  {
-    path: "/strategy",
-    title: "策略中心",
-    children: [{ path: "/special-tech", title: "专项技术保障措施" }],
-  },
-  {
-    path: "/task",
-    title: "任务管理",
-    children: [{ path: "/emergency-chemical", title: "应急化学处理" }],
-  },
-  {
-    path: "/config",
-    title: "配置管理",
-    children: [{ path: "/railway-device", title: "轨道设备" }],
   },
 ]);
 </script>

@@ -1,12 +1,17 @@
 <script setup>
 import { useThemeStore } from "@/stores/index";
 const themeStore = useThemeStore();
+import { useRouter } from "vue-router";
+const router = useRouter();
+const goHome = () => {
+  router.push({ name: "home" });
+};
 </script>
 <template>
   <header class="header">
-    <div class="logo">
+    <div class="logo" @click="goHome">
       <img src="/favicon.svg" alt="logo" />
-      <span>名称名称名称名称名称</span>
+      <span>中后台快速开发模板</span>
     </div>
     <div class="user-info">
       <!-- 切换主题 -->
@@ -31,10 +36,12 @@ const themeStore = useThemeStore();
   height: 50px;
   border-bottom: 1px solid;
   @include mixins.theme-border;
+  user-select: none;
   .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
     img {
       width: 30px;
       height: 30px;
